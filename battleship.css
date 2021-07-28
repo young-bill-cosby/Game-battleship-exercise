@@ -37,3 +37,10 @@ form input {
     border-color: rgb(83, 175, 19);
     font-size: 1em;
 }
+
+.hit {
+    background: url("/home/dariuszkalisz/lekcje/HELION JS/rozdzial08/ship.png") no-repeat center center;
+}
+.miss {
+    background: url("/home/dariuszkalisz/lekcje/HELION JS/rozdzial08/miss.png") no-repeat center center;
+}
