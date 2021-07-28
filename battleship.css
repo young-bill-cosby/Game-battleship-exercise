@@ -10,10 +10,12 @@ div#board {
     background: url("/home/dariuszkalisz/lekcje/HELION JS/rozdzial08/board.jpg"), no-repeat;
 }
 div#messageArea {
-    position:absolute;
+    position:fixed;
     top: 0px;
-    left: 0px;
-    color: rgb(83, 175, 19);
+    left: 40%;
+    color: rgb(54, 165, 20);
+    font-size:xx-large;
+
 }
 table {
     position:absolute;
@@ -43,4 +45,12 @@ form input {
 }
 .miss {
     background: url("/home/dariuszkalisz/lekcje/HELION JS/rozdzial08/miss.png") no-repeat center center;
+}
+#fireButton:hover {
+    
+    color: black;
+    background-color: yellow;
+    border-radius: 20%;
+    font-size:larger;
+
 }
