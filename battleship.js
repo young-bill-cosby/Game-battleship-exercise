@@ -54,3 +54,41 @@ var model = {                               //creating model object
       }
     
 };
+
+var controller = {
+            guesses: 0,
+            processGuess: function(guess) {
+                var location = parseGuess(guess);
+                if (location) {
+                    this.guesses++;
+                    var hit = model.fire(location);
+                    if(hit && model.shipsSunk === model.numShips) {
+                        view.displayMessage("You destroyed all my ships! in " + this.guesses + " guesses");
+                    
+                    }
+                }
+            }
+};
+
+
+function parseGuess(guess) {
+    var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+
+    if (guess === null || guess.length !== 2) {
+        alert("Please enter the valid code!! eg. B6");
+} else {
+   firstChar = guess.charAt(0);
+   var row = alphabet.indexOf(firstChar);
+   var column = guess.charAt(1);
+
+   if (isNaN(row) || isNaN(column)) {
+       alert("Sorry there are not a coords!");
+   } else if (row < 0 || row >= model.boardSize || 
+                        column < 0 || column >= model.boardSize) {
+       alert("You hit out of the game"); 
+   } else {
+       return row + column;
+         }
+   }
+   return null;
+}
